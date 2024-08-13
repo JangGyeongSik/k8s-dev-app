@@ -7,7 +7,7 @@ pipeline {
     agent any
     environment {
         IMAGE_TAG = (sh(script: 'git log -1 --pretty=%s | grep -o "v[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+"', returnStdout: true) ?: 'unknown').trim()
-        PROJECT_ID= "prj-dev-aidev-8601"
+        PROJECT_ID= "GCP_PROJECT_ID"
         ARTIFACT_REGISTRY_LOCATION = "asia-northeast3-docker.pkg.dev"
         ARTIFACT_REGISTRY_REPOSITORY = "GCP_ARTIFACT_REGISTRY"
         DOCKER_IMAGE = "ARTIFACT_REGISTRY_DOCKER_IMAGE"
